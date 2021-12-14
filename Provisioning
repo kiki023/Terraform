@@ -1,0 +1,47 @@
+main.tf 
+
+
+provider "aws" {
+	region = "us-west-1"
+}
+
+terraform apply 
+  terraform.tfstate
+
+vpc = 
+
+ IAM = 
+
+#vpc.tf
+provider "aws" { 
+	region = "us-east-2"
+	access_key = "KK"
+	secret_key = "KK/LKK"
+}
+
+aws configure 
+	access_key = "AKIAYE6GSHF3ZFKM7BWQ"
+	secret_key = "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"
+
+  sudo apt install awscli 
+
+
+resource "aws_vpc" "myvpc" {
+	cidr_block = "10.0.0.0/16"
+	tags = {
+    Name = "vpc22"
+    Envrionment = "stage"
+  }
+}
+provider "aws" {
+    region = "us-west-2"
+}
+
+resource "aws_instance" "ec2" {
+    ami = "ami-09889d8d54f9e0a0e"
+    instance_type = "t2.micro"
+    tags = {
+    Name = "dbServer"
+    Envrionment = "stage"
+  }
+}
